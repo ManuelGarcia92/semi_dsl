@@ -11,7 +11,7 @@ def iniciar_consola() -> None:
             break
         try:
             resultado = procesar_instrucciones(texto)
-            if resultado:
+            if resultado != None:
                 mensaje_salida = resultado
             else:
                 mensaje_salida = ""
