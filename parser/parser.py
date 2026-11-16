@@ -10,7 +10,7 @@ class Parser:
         instrucciones = []
 
         while not self.flujo.coincide("FIN"):
-            instrucciones.append(self.reglas.parsear_instrucciones())
+            instrucciones.append(self.reglas.parsear_instruccion())
             
         self.flujo.consumir("FIN", "Quedan tokens sin procesar")
 

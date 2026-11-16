@@ -1,4 +1,4 @@
-def evaluar_instrucciones(instrucciones : list, memoria) -> list | None:
+def evaluar_instrucciones(instrucciones : list, memoria) -> int | float | None:
     resultado = None
     if instrucciones:
         for instruccion in instrucciones:
