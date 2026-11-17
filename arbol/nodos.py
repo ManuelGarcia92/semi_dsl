@@ -77,7 +77,7 @@ class NodoLlamarFuncion:
         entorno_local = entorno_definicion.crear_entorno_local()
 
         for parametro, valor in zip(argumentos_funcion, valores):
-            entorno_local.declarar_variable(parametro.nombre, valor)
+            entorno_local.declarar_variable(parametro, valor)
 
         resultado = evaluar_instrucciones(cuerpo_codigo, entorno_local)
         return resultado           

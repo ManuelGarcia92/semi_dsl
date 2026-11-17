@@ -27,7 +27,7 @@ class FlujoDeTokens:
         self.levantar_error(mensaje_error)   
 
     def levantar_error(self, mensaje):
-        raise Exception(f"Línea : {self.mirar().linea} Columna: {self.mirar().columna} Token : {self.mirar().valor} : {mensaje}")
+        raise Exception(f"Línea: {self.mirar().linea} : Columna: {self.mirar().columna} : Se recibió {self.mirar().valor} : {mensaje}")
     
     
     

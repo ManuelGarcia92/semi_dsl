@@ -10,7 +10,7 @@ class ReglasGramaticales:
             return self.acciones.parsear_variables(self._expresion)
             
         if self.flujo.coincide("DEF"):
-            return self.acciones.parsear_funcion(self._expresion, self.parsear_instruccion)
+            return self.acciones.parsear_funcion(self.parsear_instruccion)
             
         return self._expresion()
             

@@ -18,13 +18,17 @@ class AccionesGramaticales:
         expresion = metodo_expresion()
         return nodos.NodoDeclararVariable(token_nombre_variable.valor, expresion)
     
-    def parsear_funcion(self, metodo_argumentos, metodo_cuerpo):
+    def parsear_funcion(self, metodo_cuerpo):
         self.flujo.avanzar()
         token_nombre_funcion = self.flujo.consumir("IDENTIFICADOR", "Se esperaba el nombre de la función")
-        argumentos = self.estructuras.parsear_argumentos(metodo_argumentos)
+        argumentos = self.estructuras.parsear_argumentos(self.parsear_nombre_argumento)
         cuerpo = self.estructuras.parsear_cuerpo(metodo_cuerpo)
         return nodos.NodoDeclararFuncion(token_nombre_funcion.valor, argumentos, cuerpo)
-
+    
+    def parsear_nombre_argumento(self):
+        token_argumento = self.flujo.consumir("IDENTIFICADOR", "Se esperaba el nombre del argumento")
+        return token_argumento.valor
+    
     def parsear_binario_izquierdo(self, metodo_inferior, operador):
         nodo_izquierdo = metodo_inferior()
         while self.flujo.coincide(operador):
